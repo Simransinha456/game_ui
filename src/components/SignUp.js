@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import Cookies from "universal-cookie";
+import "../App.css"
 
 function SignUp({ setIsAuth }) {
   const cookies = new Cookies();
@@ -21,7 +22,7 @@ function SignUp({ setIsAuth }) {
   };
   return (
     <div className="signUp">
-      <label> Sign Up</label>
+      <label className="label"> Sign Up</label>
       <input
         placeholder="First Name"
         onChange={(event) => {
@@ -47,7 +48,7 @@ function SignUp({ setIsAuth }) {
           setUser({ ...user, password: event.target.value });
         }}
       />
-      <button onClick={signUp}> Sign Up</button>
+      <button onClick={signUp} className="labellogin"> Sign Up</button>
     </div>
   );
 }

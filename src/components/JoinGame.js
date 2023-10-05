@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useChatContext, Channel } from "stream-chat-react";
 import Game from "./Game";
 import CustomInput from "./CustomInput";
+import "../App.css"
 function JoinGame() {
   const [rivalUsername, setRivalUsername] = useState("");
   const { client } = useChatContext();
@@ -29,16 +30,28 @@ function JoinGame() {
         </Channel>
       ) : (
         <div className="joinGame">
-          <h4>Create Game</h4>
+          <div className="h4">
+            <h4>Create Game</h4>
+          </div>
           <input
-            placeholder="Username of rival..."
+            placeholder="Username"
             onChange={(event) => {
               setRivalUsername(event.target.value);
             }}
           />
           <button onClick={createChannel}> Join/Start Game</button>
         </div>
+
       )}
+      <div className='submit-tag'>
+        <p>Project Created By: Simran Sinha</p>
+        <a href='https://github.com/Simransinha456' target='_blank' rel="noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/3291/3291695.png" width="32" height="32" alt="Github"></img>
+        </a>
+        <a href='https://www.linkedin.com/in/simran-sinha-54b4241b7/' target='_blank' rel="noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" width="32" height="32" alt="LinkedIn"></img>
+        </a>
+      </div>
     </>
   );
 }

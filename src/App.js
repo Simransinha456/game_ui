@@ -8,7 +8,7 @@ import { useState } from "react";
 import JoinGame from "./components/JoinGame";
 
 function App() {
-  const api_key = "z2szkrubae2c";
+  const api_key = "96mqpka9j5dh";
   const cookies = new Cookies();
   const token = cookies.get("token");
   const client = StreamChat.getInstance(api_key);
@@ -47,7 +47,7 @@ function App() {
       {isAuth ? (
         <Chat client={client}>
           <JoinGame />
-          <button onClick={logOut}> Log Out</button>
+          <button onClick={logOut} className="logout"> Log Out</button>
         </Chat>
       ) : (
         <>
